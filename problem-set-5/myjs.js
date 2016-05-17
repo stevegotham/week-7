@@ -18,3 +18,7 @@ function vowelCount (str) {
   }
   return count;
 }
+
+function vowelCount2 (str) {
+  return str.toLowerCase().split(/[aeiou]/).length-1
+}
