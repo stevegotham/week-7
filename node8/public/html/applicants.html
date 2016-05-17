@@ -11,9 +11,10 @@
     <div class="container">
       <h1>Applicants</h1>
       <ul id="applications" class="list-unstyled">
-        <li>Applicants should go here.</li>
         <li ng-repeat="applicant in applicants">
           {{ applicant.name }}
+          {{ applicant._id }}
+          <button class="btn btn-sm" ng-click="deleteUser(applicant._id,$index)">Delete</button>
         </li>
       </ul>
     </div>

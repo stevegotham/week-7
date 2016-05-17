@@ -28,18 +28,26 @@ app.get('/', function(req, res) {
 
 // displays a list of applicants
 app.get('/applicants', function(req, res){
-
 	res.sendFile('html/applicants.html', {root : './public'});
 });
 app.get('/applicantsDB', function(req, res){
 	Applicant.find({}, function(err, data) {
 		if(err) return res.send("Err: ", err);
 		res.send(data);
-	})
-})
+	});
+});
 app.get('/success', function(req, res) {
 	res.sendFile('html/success.html', {root : './public'});
+});
+
+
+app.post('/delete', function(req, res) {
+	Applicant.findByIdAndRemove({_id: req.body.id}, function(err, data) {
+		res.send(data);
+	})
 })
+
+
 // creates and applicant
 app.post('/applicant', function(req, res){
 	// Here is where you need to get the data
