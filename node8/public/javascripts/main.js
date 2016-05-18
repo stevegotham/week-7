@@ -11,10 +11,10 @@ angular.module('JobApp')
 			.then(function(res) {
 				$scope.applicants = res.data
 			})
-		$scope.deleteUser = function(applicantId,$index) {
+		$scope.deleteUser = function(applicantId, $index) {
 			$http.post('/delete/', {id: applicantId})
-				.then(function(res) {
+				// .then(function(res) {
 					$scope.applicants.splice($index, 1)
-				})
+				// })
 		}
 }]);

@@ -5,3 +5,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+li {
+  margin-top: 5px;
+}
+
+button {
+  margin-left: 3px;
+}
